@@ -1,0 +1,3 @@
+libs/libboost_filesystem.a
+libs/libboost_system.a
+Debug/*
