@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=BigDataUbuntu
-Date                   :=20/06/16
+Date                   :=23/06/16
 CodeLitePath           :="/home/nihalsid/.codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -39,8 +39,8 @@ LinkOptions            :=
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)/usr/local/include 
 IncludePCH             := 
 RcIncludePath          := 
-Libs                   := $(LibrarySwitch)boost_system $(LibrarySwitch)boost_filesystem 
-ArLibs                 :=  "libboost_system.a" "libboost_filesystem.a" 
+Libs                   := $(LibrarySwitch)boost_system $(LibrarySwitch)boost_filesystem $(LibrarySwitch)boost_program_options 
+ArLibs                 :=  "libboost_system.a" "libboost_filesystem.a" "libboost_program_options.a" 
 LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)libs 
 
 ##
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/source_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/source_ProcInterface.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/source_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/source_ProcInterface.cpp$(ObjectSuffix) $(IntermediateDirectory)/source_PrintUtils.cpp$(ObjectSuffix) 
 
 
 
@@ -106,6 +106,14 @@ $(IntermediateDirectory)/source_ProcInterface.cpp$(DependSuffix): source/ProcInt
 
 $(IntermediateDirectory)/source_ProcInterface.cpp$(PreprocessSuffix): source/ProcInterface.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_ProcInterface.cpp$(PreprocessSuffix) "source/ProcInterface.cpp"
+
+$(IntermediateDirectory)/source_PrintUtils.cpp$(ObjectSuffix): source/PrintUtils.cpp $(IntermediateDirectory)/source_PrintUtils.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/nihalsid/Documents/CPPSpace/ProcGrapher/source/PrintUtils.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_PrintUtils.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/source_PrintUtils.cpp$(DependSuffix): source/PrintUtils.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_PrintUtils.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/source_PrintUtils.cpp$(DependSuffix) -MM "source/PrintUtils.cpp"
+
+$(IntermediateDirectory)/source_PrintUtils.cpp$(PreprocessSuffix): source/PrintUtils.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_PrintUtils.cpp$(PreprocessSuffix) "source/PrintUtils.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

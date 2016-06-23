@@ -23,6 +23,8 @@
     <File Name="source/main.cpp"/>
     <File Name="source/ProcInterface.cpp"/>
     <File Name="source/ProcInterface.h"/>
+    <File Name="source/PrintUtils.h"/>
+    <File Name="source/PrintUtils.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="libs">
     <File Name="libs/libboost_filesystem.a"/>
@@ -47,6 +49,7 @@
         <LibraryPath Value="libs"/>
         <Library Value="libboost_system.a"/>
         <Library Value="libboost_filesystem.a"/>
+        <Library Value="libboost_program_options.a"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>

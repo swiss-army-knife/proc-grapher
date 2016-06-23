@@ -20,7 +20,7 @@ void ProcInterface::refresh_pids()
 	{
 		if(boost::filesystem::exists(procdir) && boost::filesystem::is_directory(procdir))
 		{
-			for (boost::filesystem::directory_entry& x:boost::filesystem::directory_iterator(procdir))
+			for (boost::filesystem::directory_entry& x : boost::filesystem::directory_iterator(procdir))
 			{
 				 pid_list.push_back(x.path().filename().string());
 			}
