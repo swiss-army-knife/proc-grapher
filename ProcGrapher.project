@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="ProcGrapher" InternalType="Console">
   <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
     <Plugin Name="CMakePlugin">
       <![CDATA[[{
   "name": "Debug",
@@ -13,9 +16,6 @@
   "parentProject": ""
  }]]]>
     </Plugin>
-    <Plugin Name="qmake">
-      <![CDATA[00010001N0005Debug000000000000]]>
-    </Plugin>
   </Plugins>
   <Description/>
   <Dependencies/>
@@ -25,10 +25,8 @@
     <File Name="source/ProcInterface.h"/>
     <File Name="source/PrintUtils.h"/>
     <File Name="source/PrintUtils.cpp"/>
-  </VirtualDirectory>
-  <VirtualDirectory Name="libs">
-    <File Name="libs/libboost_filesystem.a"/>
-    <File Name="libs/libboost_system.a"/>
+    <File Name="source/ProcInfo.h"/>
+    <File Name="source/ProcInfo.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
@@ -59,7 +57,7 @@
       <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
         <DebuggerSearchPaths/>
         <PostConnectCommands/>
-        <StartupCommands/>
+        <StartupCommands>--pid 1</StartupCommands>
       </Debugger>
       <PreBuild/>
       <PostBuild/>

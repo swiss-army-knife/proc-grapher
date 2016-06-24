@@ -27,8 +27,9 @@ int main(int argc, char **argv)
 		pid = vm["pid"].as<int>();
 	}
 	
+	ProcInterface p;
 	while(true){
-		PrintUtils::ConsolePrintContinuous();
+		PrintUtils::ConsolePrintContinuous(p.fill_values("23831"));
 	}
 	
 	return 0;
