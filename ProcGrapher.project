@@ -27,6 +27,7 @@
     <File Name="source/PrintUtils.cpp"/>
     <File Name="source/ProcInfo.h"/>
     <File Name="source/ProcInfo.cpp"/>
+    <File Name="source/gnuplot-iostream.h"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
@@ -48,6 +49,7 @@
         <Library Value="libboost_system.a"/>
         <Library Value="libboost_filesystem.a"/>
         <Library Value="libboost_program_options.a"/>
+        <Library Value="libboost_iostreams.a"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
