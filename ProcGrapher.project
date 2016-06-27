@@ -23,11 +23,10 @@
     <File Name="source/main.cpp"/>
     <File Name="source/ProcInterface.cpp"/>
     <File Name="source/ProcInterface.h"/>
-    <File Name="source/PrintUtils.h"/>
-    <File Name="source/PrintUtils.cpp"/>
     <File Name="source/ProcInfo.h"/>
-    <File Name="source/ProcInfo.cpp"/>
     <File Name="source/gnuplot-iostream.h"/>
+    <File Name="source/OutputUtils.h"/>
+    <File Name="source/OutputUtils.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

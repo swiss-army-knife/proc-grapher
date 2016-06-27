@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=BigDataUbuntu
-Date                   :=26/06/16
+Date                   :=27/06/16
 CodeLitePath           :="/home/nihalsid/.codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/source_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/source_ProcInterface.cpp$(ObjectSuffix) $(IntermediateDirectory)/source_PrintUtils.cpp$(ObjectSuffix) $(IntermediateDirectory)/source_ProcInfo.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/source_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/source_ProcInterface.cpp$(ObjectSuffix) $(IntermediateDirectory)/source_OutputUtils.cpp$(ObjectSuffix) 
 
 
 
@@ -107,21 +107,13 @@ $(IntermediateDirectory)/source_ProcInterface.cpp$(DependSuffix): source/ProcInt
 $(IntermediateDirectory)/source_ProcInterface.cpp$(PreprocessSuffix): source/ProcInterface.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_ProcInterface.cpp$(PreprocessSuffix) "source/ProcInterface.cpp"
 
-$(IntermediateDirectory)/source_PrintUtils.cpp$(ObjectSuffix): source/PrintUtils.cpp $(IntermediateDirectory)/source_PrintUtils.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/nihalsid/Documents/CPPSpace/ProcGrapher/source/PrintUtils.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_PrintUtils.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/source_PrintUtils.cpp$(DependSuffix): source/PrintUtils.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_PrintUtils.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/source_PrintUtils.cpp$(DependSuffix) -MM "source/PrintUtils.cpp"
+$(IntermediateDirectory)/source_OutputUtils.cpp$(ObjectSuffix): source/OutputUtils.cpp $(IntermediateDirectory)/source_OutputUtils.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/nihalsid/Documents/CPPSpace/ProcGrapher/source/OutputUtils.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_OutputUtils.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/source_OutputUtils.cpp$(DependSuffix): source/OutputUtils.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_OutputUtils.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/source_OutputUtils.cpp$(DependSuffix) -MM "source/OutputUtils.cpp"
 
-$(IntermediateDirectory)/source_PrintUtils.cpp$(PreprocessSuffix): source/PrintUtils.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_PrintUtils.cpp$(PreprocessSuffix) "source/PrintUtils.cpp"
-
-$(IntermediateDirectory)/source_ProcInfo.cpp$(ObjectSuffix): source/ProcInfo.cpp $(IntermediateDirectory)/source_ProcInfo.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/nihalsid/Documents/CPPSpace/ProcGrapher/source/ProcInfo.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_ProcInfo.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/source_ProcInfo.cpp$(DependSuffix): source/ProcInfo.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_ProcInfo.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/source_ProcInfo.cpp$(DependSuffix) -MM "source/ProcInfo.cpp"
-
-$(IntermediateDirectory)/source_ProcInfo.cpp$(PreprocessSuffix): source/ProcInfo.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_ProcInfo.cpp$(PreprocessSuffix) "source/ProcInfo.cpp"
+$(IntermediateDirectory)/source_OutputUtils.cpp$(PreprocessSuffix): source/OutputUtils.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_OutputUtils.cpp$(PreprocessSuffix) "source/OutputUtils.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
